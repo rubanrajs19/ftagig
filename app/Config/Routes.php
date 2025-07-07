@@ -21,4 +21,6 @@ $routes->group('admin', ['filter' => 'auth'], function($routes) {
     $routes->match(['get', 'post'], 'categories/create', 'Admin\Categories::create');
     $routes->match(['get', 'post'], 'categories/edit/(:num)', 'Admin\Categories::edit/$1');
     $routes->get('categories/delete/(:num)', 'Admin\Categories::delete/$1');
+    $routes->get('services/toggle/(:num)', 'Admin\Services::toggle/$1');
+    $routes->get('services/clone/(:num)', 'Admin\Services::clone/$1');
 });

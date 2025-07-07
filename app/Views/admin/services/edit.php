@@ -8,9 +8,12 @@
   </div>
   <div class="mb-3">
     <label class="form-label">Category</label>
-    <select name="category_id" class="form-select">
+    <select name="category_id" class="form-select select2" required>
+      <option value="">Select Category</option>
       <?php foreach ($categories as $cat): ?>
-        <option value="<?= $cat['id'] ?>" <?= $service['category_id'] == $cat['id'] ? 'selected' : '' ?>><?= esc($cat['name']) ?> (<?= esc($cat['type']) ?>)</option>
+        <option value="<?= $cat['id'] ?>" <?= $cat['id'] == $service['category_id'] ? 'selected' : '' ?>>
+          <?= esc($cat['name']) ?> (<?= esc($cat['type']) ?>)
+        </option>
       <?php endforeach; ?>
     </select>
   </div>
@@ -39,7 +42,7 @@
     <textarea name="ideal_for" class="form-control editor"><?= esc($service['ideal_for']) ?></textarea>
   </div>
   <div class="mb-3">
-    <label class="form-label">Features (JSON)</label>
+    <label class="form-label">Key Services (Features)</label>
     <textarea name="features" class="form-control editor"><?= esc($service['features']) ?></textarea>
   </div>
   <div class="mb-3">
@@ -52,4 +55,12 @@
   </div>
   <button class="btn btn-success">Update</button>
 </form>
+
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    $('.select2').select2();
+  });
+</script>
 <?= $this->endSection() ?>
