@@ -55,7 +55,9 @@
   <h5 class="text-white">FTA Admin</h5>
    <a href="<?= base_url('admin/categories') ?>" class="nav-link">Categories</a>
   <a href="<?= base_url('admin/services') ?>" class="nav-link">Services</a> 
+  <a href="<?= base_url('admin/onboarding') ?>" class="nav-link">User Entires</a> 
   <a href="<?= base_url('admin/logout') ?>" class="nav-link mt-auto">Logout</a>
+
 </div>
 
 <div class="content-wrapper">

@@ -203,7 +203,9 @@
     <?=view('services_section') ?>
 </section>
 
-
+<section class="tabs-container">
+    <?=view('onboarding-section') ?>
+</section>
 
 
 </main>

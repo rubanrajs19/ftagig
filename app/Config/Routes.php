@@ -10,6 +10,7 @@ $routes->get('/', 'Home::ftagig');
 $routes->get('admin/login', 'Admin\Auth::login');
 $routes->post('admin/login', 'Admin\Auth::login');
 $routes->get('admin/logout', 'Admin\Auth::logout');
+$routes->post('onboarding/submit', 'Onboarding::submit');
 
 $routes->group('admin', ['filter' => 'auth'], function($routes) {
     $routes->get('services', 'Admin\Services::index');
@@ -23,4 +24,6 @@ $routes->group('admin', ['filter' => 'auth'], function($routes) {
     $routes->get('categories/delete/(:num)', 'Admin\Categories::delete/$1');
     $routes->get('services/toggle/(:num)', 'Admin\Services::toggle/$1');
     $routes->get('services/clone/(:num)', 'Admin\Services::clone/$1');
+
+    $routes->get('onboarding', 'Admin\Admin::onboarding');
 });
