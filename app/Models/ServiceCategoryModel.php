@@ -3,5 +3,5 @@ namespace App\Models;
 use CodeIgniter\Model;
 class ServiceCategoryModel extends Model {
     protected $table = 'service_categories';
-    protected $allowedFields = ['name', 'slug', 'type', 'is_active'];
+    protected $allowedFields = ['name', 'description', 'slug', 'type', 'is_active'];
 }

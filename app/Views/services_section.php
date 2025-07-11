@@ -94,34 +94,34 @@
     </div> -->
     
     <?php foreach ($bundle_categories as $index => $cat): ?>
-  <div class="bundle-card-group" data-category="<?= $cat['slug'] ?>" style="<?= $index === 0 ? '' : 'display:none;' ?>">
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-      <?php foreach ($bundle_services[$cat['id']] ?? [] as $svc): ?>
-        <div class="col">
-          <div class="plan-card">
+    <div class="bundle-card-group" data-category="<?= $cat['slug'] ?>" style="<?= $index === 0 ? '' : 'display:none;' ?>">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <?php foreach ($bundle_services[$cat['id']] ?? [] as $svc): ?>
+          <div class="col">
             <div class="plan-card">
-                <div class="plan-title"><?= esc($svc['title']) ?></div>
-                <div class="price-line">₹ <?= number_format($svc['price']) ?> <span>+ GST</span></div>
-                <div class="page-range-rating">
-                  <div><?= esc($svc['delivery_time']) ?></div>
-                  <div class="rating"><?= esc($svc['rating']) ?> ★</div>
+              <div class="plan-card">
+                  <div class="plan-title"><?= esc($svc['title']) ?></div>
+                  <div class="price-line">₹ <?= number_format($svc['price']) ?> <span>+ GST</span></div>
+                  <div class="page-range-rating">
+                    <div><?= esc($svc['delivery_time']) ?></div>
+                    <div class="rating"><?= esc($svc['rating']) ?> ★</div>
+                  </div>
+                  <div class="section-title">Key Services</div>
+                  <div class="feature-list">
+                    <?= html_entity_decode($svc['features']) ?>
+                  </div>
+                  <div class="section-title">Ideal For</div>
+                  <div class="ideal-for">
+                    <?= html_entity_decode($svc['ideal_for']) ?>
+                  </div>
+                  <button class="add-to-cart-btn">Add to cart 🛒</button>
                 </div>
-                <div class="section-title">Key Services</div>
-                <div class="feature-list">
-                  <?= html_entity_decode($svc['features']) ?>
-                </div>
-                <div class="section-title">Ideal For</div>
-                <div class="ideal-for">
-                  <?= html_entity_decode($svc['ideal_for']) ?>
-                </div>
-                <button class="add-to-cart-btn">Add to cart 🛒</button>
-              </div>
+            </div>
           </div>
-        </div>
-      <?php endforeach; ?>
+        <?php endforeach; ?>
+      </div>
     </div>
-  </div>
-<?php endforeach; ?>
+  <?php endforeach; ?>
 
   </div>
 </section>

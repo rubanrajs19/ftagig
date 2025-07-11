@@ -25,6 +25,7 @@ class Home extends BaseController
         foreach ($individual_categories as $cat) {
             $individual_services[$cat['id']] = $serviceModel
                 ->where('category_id', $cat['id'])
+                 ->where('is_active', 1)
                 ->findAll();
         }
 
@@ -32,6 +33,7 @@ class Home extends BaseController
         foreach ($bundle_categories as $cat) {
             $bundle_services[$cat['id']] = $serviceModel
                 ->where('category_id', $cat['id'])
+                ->where('is_active', 1)
                 ->findAll();
         }
 
@@ -43,4 +45,64 @@ class Home extends BaseController
         ]);
         
     }
+
+    public function individualService($slug)
+    {
+        $categoryModel = new \App\Models\ServiceCategoryModel();
+        $serviceModel  = new \App\Models\ServiceModel();
+
+        $category = $categoryModel->where('slug', $slug)->first();
+
+        if (!$category) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        }
+
+        $services = $serviceModel
+            ->where('category_id', $category['id'])
+            ->where('is_active', 1)
+            ->findAll();
+     
+        return view('service_category_page', [
+            'category'   => $category,
+            'services'   => $services,
+            'breadcrumb' => [
+                'Home' => base_url('/'),
+                // 'Individual Services' => base_url('/individual-service'),
+                $category['name'] => null
+            ]
+        ]);
+    }
+
+    public function bundleService($slug)
+    {
+        
+        $categoryModel = new \App\Models\ServiceCategoryModel();
+        $serviceModel  = new \App\Models\ServiceModel();
+
+        $category = $categoryModel->where('slug', $slug)->first();
+
+        if (!$category || $category['type'] !== 'bundle') {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        }
+
+        $services = $serviceModel
+            ->where('category_id', $category['id'])
+            ->where('is_active', 1)
+            ->findAll();
+
+        $breadcrumb = [
+            'Home' => base_url('/'),
+            // 'Bundled Services' => base_url('/bundle-service'),
+            $category['name'] => null
+        ];
+      
+
+        return view('service_category_page', [
+            'category'   => $category,
+            'services'   => $services,
+            'breadcrumb' => $breadcrumb
+        ]);
+    }
+
+
 }

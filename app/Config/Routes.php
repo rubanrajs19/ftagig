@@ -12,6 +12,10 @@ $routes->post('admin/login', 'Admin\Auth::login');
 $routes->get('admin/logout', 'Admin\Auth::logout');
 $routes->post('onboarding/submit', 'Onboarding::submit');
 
+$routes->get('individual-service/(:segment)', 'Home::individualService/$1');
+$routes->get('bundled-service/(:segment)', 'Home::bundleService/$1');
+$routes->get('search-services', 'SearchController::searchServices');
+
 $routes->group('admin', ['filter' => 'auth'], function($routes) {
     $routes->get('services', 'Admin\Services::index');
     $routes->match(['get', 'post'], 'services/create', 'Admin\Services::create');
