@@ -69,13 +69,13 @@
   </div>
   <div class="form-group">
     <label for="related_categories">Related Categories</label>
-    <select name="related_categories[]" id="related_categories" class="form-control" multiple>
+    <select name="related_categories[]" id="related_categories" class="form-control" >
         <?php foreach ($categories as $cat): ?>
             <option value="<?= $cat['id'] ?>"><?= esc($cat['name']) ?></option>
         <?php endforeach; ?>
     </select>
 </div>
-  <button class="btn btn-primary">Save</button>
+  <button class="btn btn-primary mt-3">Save</button>
 </form>
 
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
@@ -130,6 +130,12 @@ document.getElementById('images').addEventListener('change', function () {
     });
 });
 </script>
-
+<script>
+$(document).ready(function () {
+    $('#related_categories').select2({
+        placeholder: "Select related categories"
+    });
+});
+</script>
 
 <?= $this->endSection() ?>

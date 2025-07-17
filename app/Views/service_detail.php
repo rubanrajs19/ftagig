@@ -140,7 +140,7 @@
                     <?php if (!empty($images)): ?>
                         <?php foreach ($images as $img): ?>
                             <div class="swiper-slide">
-                                <img src="<?= base_url('assets/' . $img) ?>" alt="Service Image">
+                                <img src="<?= base_url('assets/banners/' . $img) ?>" alt="Service Image">
                             </div>
                         <?php endforeach; ?>
                     <?php else: ?>
@@ -160,7 +160,7 @@
                 <div class="swiper-wrapper">
                     <?php if (!empty($images)): ?>
                         <?php foreach ($images as $img): ?>
-                            <div class="swiper-slide"><img src="<?= base_url('assets/' . $img) ?>" alt="Thumb"></div>
+                            <div class="swiper-slide"><img src="<?= base_url('assets/banners/' . $img) ?>" alt="Thumb"></div>
                         <?php endforeach; ?>
                     <?php else: ?>
                         <?php for ($i = 0; $i < 3; $i++): ?>

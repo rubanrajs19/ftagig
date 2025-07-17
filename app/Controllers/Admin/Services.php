@@ -117,7 +117,7 @@ class Services extends BaseController
                 foreach ($images as $image) {
                     if ($image->isValid() && !$image->hasMoved()) {
                         $newName = uniqid() . '_' . $image->getClientName();
-                        $image->move(ROOTPATH . 'public/assets', $newName);
+                        $image->move(ROOTPATH . 'public/assets/banners/', $newName);
                         $newImages[] = $newName;
                     }
                 }

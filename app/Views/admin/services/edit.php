@@ -85,7 +85,7 @@
 
   <div class="form-group mb-3">
       <label for="related_categories">Related Categories</label>
-      <select name="related_categories[]" id="related_categories" class="form-control" multiple>
+      <select name="related_categories[]" id="related_categories" class="form-control">
           <?php foreach ($categories as $cat): ?>
               <option value="<?= $cat['id'] ?>" <?= in_array($cat['id'], $selected ?? []) ? 'selected' : '' ?>>
                   <?= esc($cat['name']) ?>
