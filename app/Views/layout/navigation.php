@@ -24,7 +24,7 @@ $bundledServices = array_filter($categories, fn($cat) => $cat['type'] === 'bundl
   }
 .menu-item-dropdown-content .grid--row {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
   gap: 1rem;
 }
 
@@ -32,6 +32,9 @@ $bundledServices = array_filter($categories, fn($cat) => $cat['type'] === 'bundl
   border-radius: 12px;
   background: #F5F8FA;
   padding:1rem 1rem;
+}
+.font_size_nav{
+  font-size: 0.9rem;
 }
 
 </style>
@@ -83,17 +86,17 @@ $bundledServices = array_filter($categories, fn($cat) => $cat['type'] === 'bundl
                                       <div>
                                         <div>
                                           <?php
-                                              $iconPath = FCPATH . 'assets/icons/' . $cat['slug'] . '.svg';
+                                              $iconPath = FCPATH . 'assets/icons/' . $cat['slug'] . '.png';
                                               $iconUrl = file_exists($iconPath)
-                                                  ? base_url('assets/icons/' . $cat['slug'] . '.svg')
-                                                  : base_url('assets/icons/default.svg');
+                                                  ? base_url('assets/icons/' . $cat['slug'] . '.png')
+                                                  : base_url('assets/icons/default.png');
                                             ?>
                                             <img src="<?= $iconUrl ?>" alt="<?= esc($cat['name']) ?> Icon" loading="lazy">
 
                                         </div>
                                       </div>
                                       <div>
-                                        <div><?= esc($cat['name']) ?></div>
+                                        <div class="font_size_nav"><?= esc($cat['name']) ?></div>
                                          <div class="text-muted small"><?= esc($cat['description']) ?></div>
                                         
                                       </div>
@@ -134,17 +137,17 @@ $bundledServices = array_filter($categories, fn($cat) => $cat['type'] === 'bundl
                                       <div>
                                         <div>
                                           <?php
-                                              $iconPath = FCPATH . 'assets/icons/' . $cat['slug'] . '.svg';
+                                              $iconPath = FCPATH . 'assets/icons/' . $cat['slug'] . '.png';
                                               $iconUrl = file_exists($iconPath)
-                                                  ? base_url('assets/icons/' . $cat['slug'] . '.svg')
-                                                  : base_url('assets/icons/default.svg');
+                                                  ? base_url('assets/icons/' . $cat['slug'] . '.png')
+                                                  : base_url('assets/icons/default.png');
                                             ?>
                                             <img src="<?= $iconUrl ?>" alt="<?= esc($cat['name']) ?> Icon" loading="lazy">
 
                                         </div>
                                       </div>
                                       <div>
-                                        <div><?= esc($cat['name']) ?></div>
+                                        <div class="font_size_nav"><?= esc($cat['name']) ?></div>
                                         <div  class="text-muted small"><?= esc($cat['description']) ?></div>
                                       </div>
                                     </div>

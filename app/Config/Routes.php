@@ -30,4 +30,7 @@ $routes->group('admin', ['filter' => 'auth'], function($routes) {
     $routes->get('services/clone/(:num)', 'Admin\Services::clone/$1');
 
     $routes->get('onboarding', 'Admin\Admin::onboarding');
+   
 });
+ $routes->get('admin/services/check-slug', 'Admin\Services::checkSlug');
+ $routes->get('(:segment)/(:segment)/(:segment)', 'ServiceController::detail/$1/$2/$3');

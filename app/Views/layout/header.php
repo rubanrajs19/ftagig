@@ -24,7 +24,8 @@
 <link rel="stylesheet" media="all" href="<?= base_url('assets/css/style3.css?v=1.0.2') ?>" />
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-    
+   <!-- SwiperJS -->
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet" />  
 
     <!-- <script type="module">
       import ody from "https://cdn.odyssiant.com/javascript/odyssiant.js?v=1.2";

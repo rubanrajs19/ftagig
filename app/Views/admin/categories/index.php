@@ -5,7 +5,7 @@
 
 <table class="table table-bordered" id="categoriesTable">
   <thead>
-    <tr><th>ID</th><th>Name</th><th>Slug</th><th>Type</th><th>Actions</th></tr>
+    <tr><th>ID</th><th>Name</th><th>Slug</th><th>Type</th><th>Description</th><th>Actions</th></tr>
   </thead>
   <tbody>
     <?php foreach ($categories as $cat): ?>
@@ -14,6 +14,9 @@
         <td><?= esc($cat['name']) ?></td>
         <td><?= esc($cat['slug']) ?></td>
         <td><?= esc($cat['type']) ?></td>
+        <td><?= esc($cat['description']) ?></td>
+        
+
         <td>
          <a href="<?= base_url('admin/categories/edit/' . $cat['id']) ?>" class="btn btn-sm btn-warning">Edit</a>
          <a href="<?= base_url('admin/categories/delete/' . $cat['id']) ?>" class="btn btn-sm btn-danger">Delete</a>

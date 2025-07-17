@@ -61,10 +61,13 @@ class Home extends BaseController
             ->where('category_id', $category['id'])
             ->where('is_active', 1)
             ->findAll();
+
+        $allCategories = $categoryModel->findAll();
      
         return view('service_category_page', [
             'category'   => $category,
             'services'   => $services,
+            'all_categories' => $allCategories ,
             'breadcrumb' => [
                 'Home' => base_url('/'),
                 // 'Individual Services' => base_url('/individual-service'),
@@ -95,11 +98,12 @@ class Home extends BaseController
             // 'Bundled Services' => base_url('/bundle-service'),
             $category['name'] => null
         ];
-      
+        $allCategories = $categoryModel->findAll();
 
         return view('service_category_page', [
             'category'   => $category,
             'services'   => $services,
+             'all_categories' => $allCategories ,
             'breadcrumb' => $breadcrumb
         ]);
     }
